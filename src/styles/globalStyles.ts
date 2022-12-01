@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 
 a {
@@ -50,7 +51,7 @@ a {
 
 body {
     color: white;
-    background: #0d0d0d;
+    background: rgba(13, 17, 23, 1);
   }
 
 `;
