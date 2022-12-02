@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Logo from "../components/Logo";
+import GitGraph from "../components/GitGraph";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <Navbar/>
+      <GitGraph/>
     </>
   );
 }
