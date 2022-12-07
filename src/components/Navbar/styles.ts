@@ -1,24 +1,11 @@
 import styled from "styled-components";
-
-export type buttonType = {
-  variant: "text" | "contained";
-};
+import { buttonType } from "../../../types/types";
 
 export const Navbar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 15%;
-  @media (max-width: 1000px) {
-    padding: 0.5rem 10%;
-  }
-  @media (max-width: 600px) {
-    padding: 0.5rem 5%;
-  }
-  @media (max-width: 400px) {
-    padding: 0.5rem 3%;
-  }
 `;
 
 export const Stack = styled.div`
