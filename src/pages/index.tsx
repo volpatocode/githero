@@ -16,6 +16,7 @@ import {
   EventsWrapper,
   Section,
 } from "../styles/homestyles";
+import CardEvent from "../components/CardEvent";
 
 export default function Home() {
   return (
@@ -45,6 +46,11 @@ export default function Home() {
           <Section>
             <SectionTitle>Active Events</SectionTitle>
             <EventsWrapper>
+              <CardEvent/>
+              <CardEvent/>
+              <CardEvent/>
+              <CardEvent/>
+              <CardEvent/>
 
             </EventsWrapper>
           </Section>
