@@ -11,11 +11,11 @@ export const Footer = styled.div`
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #21262d;
+  padding-top: 1rem;
 `;
 
 export const Copyright = styled.p`
   display: grid;
-  padding: 1rem;
   place-items: center;
   color: rgba(255, 255, 255, 0.6);
 `;
