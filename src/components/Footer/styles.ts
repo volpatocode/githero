@@ -11,7 +11,7 @@ export const Footer = styled.div`
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #21262d;
-  padding-top: 1rem;
+  padding: 1rem 0;
 `;
 
 export const Copyright = styled.p`

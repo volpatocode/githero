@@ -8,15 +8,15 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-  padding: 0.5rem 15%;
+  padding: 0 15%;
   @media (max-width: 1280px) {
-    padding: 0.5rem 10%;
+    padding: 0 10%;
   }
   @media (max-width: 640px) {
-    padding: 0.5rem 5%;
+    padding: 0 5%;
   }
   @media (max-width: 400px) {
-    padding: 0.5rem 3%;
+    padding: 0 3%;
   }
 `;
 
@@ -32,12 +32,15 @@ export const InfoWrapper = styled.div`
   gap: 1.5rem;
   margin: 0 auto;
   width: 50%;
+  padding-top: 5rem;
 
   @media (max-width: 1280px) {
     width: 70%;
+    padding-top: 3rem;
   }
   @media (max-width: 640px) {
     width: 100%;
+    padding-top: 2rem;
   }
 `;
 

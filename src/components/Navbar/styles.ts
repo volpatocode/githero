@@ -6,6 +6,10 @@ export const Navbar = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  background: rgba(13, 17, 23, 1);
 `;
 
 export const Stack = styled.div`
@@ -13,16 +17,6 @@ export const Stack = styled.div`
   flex-direction: row;
   gap: 1rem;
   align-items: center;
-`;
-
-export const Anchor = styled.a`
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.95);
-  padding: 6px 8px;
-  transition: 200ms ease-in-out all;
-  :hover {
-    color: rgba(255, 255, 255, 0.65);
-  }
 `;
 
 export const Button = styled.button<buttonType>`
