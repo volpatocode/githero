@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { number } from "yup";
 import { initialGrid } from "./data";
 import { GitGraph, Row, Cell } from "./styles";
 
@@ -15,17 +14,17 @@ export default function Graph() {
 
   return (
     <GitGraph>
-      {grid?.map((row, rowIndex) => (
-        <Row key={rowIndex}>
-          {row?.map((value, colIndex) => (
+      {grid?.map((row, colIndex,) => (
+        <Row key={row[colIndex]}>
+          {row?.map((value, rowIndex) => (
             <Cell
-              key={colIndex}
-              // onClick={() => {
-              //   const cellIndex = rowIndex * 7 + colIndex
-              //   const cellValue = grid[colIndex][rowIndex]
-              //   setGrid([...grid]);
-              //   console.log(cellIndex, cellValue);
-              // }}
+              key={rowIndex}
+              onClick={() => {
+                const cellIndex = rowIndex * 7 + colIndex
+                const cellValue = grid[colIndex]
+                // setGrid([...grid]);
+                console.log(cellValue);
+              }}
               value={value}
             />
           ))}

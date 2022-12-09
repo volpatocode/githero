@@ -9,6 +9,7 @@ export const GitGraph = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1px;
+  margin: 0 auto;
 `;
 
 export const Row = styled.div`
@@ -23,26 +24,17 @@ export const Cell = styled.button<graphType>`
     switch (props.value) {
       case 0:
         return "rgba(0, 0, 0, .3)";
-      case 1:
-        return "rgba(57, 211, 83, 1)";
-      case 2:
-        return "rgba(57, 211, 83, .8)";
-      case 3:
-        return "rgba(57, 211, 83, .5)";
       case 4:
+        return "rgba(57, 211, 83, 1)";
+      case 3:
+        return "rgba(57, 211, 83, .8)";
+      case 2:
+        return "rgba(57, 211, 83, .5)";
+      case 1:
         return "rgba(57, 211, 83, .2)";
     }
   }};
   width: 16px;
   height: 16px;
 
-  animation: smooth 0.3s;
-  @keyframes smooth {
-    0% {
-      opacity: 0.3;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `;

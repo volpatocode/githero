@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { buttonType } from "../../types/types";
+import { buttonType } from "../types/types";
 
 export const PageWrapper = styled.div`
   width: 100vw;
