@@ -17,7 +17,6 @@ export default function MenuIcon() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-
   return (
     <>
       <Menu onClick={handleMenu}>
@@ -51,10 +50,13 @@ export function MenuModal({ handleMenu }: navbarType) {
         <Anchor onClick={handleMenu} href="/">
           Home
         </Anchor>
-        <Anchor onClick={handleMenu} href="/about">
-          About
+        <Anchor onClick={handleMenu} href="/">
+          Profile
         </Anchor>
-        <Anchor onClick={handleMenu} href="/contact">
+        <Anchor onClick={handleMenu} href="/">
+          Create Event
+        </Anchor>
+        <Anchor onClick={handleMenu} href="/">
           Contact
         </Anchor>
       </Stack>

@@ -3,6 +3,8 @@ import GitGraph from "../components/GitGraph";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import { mdiChevronRight } from "@mdi/js";
+
 import {
   PageWrapper,
   Content,
@@ -15,8 +17,10 @@ import {
   SectionTitle,
   EventsWrapper,
   Section,
+  Anchor,
 } from "../styles/homestyles";
 import CardEvent from "../components/CardEvent";
+import Icon from "@mdi/react";
 
 export default function Home() {
   return (
@@ -40,18 +44,27 @@ export default function Home() {
             </MainSubtitle>
             <ButtonsBox>
               <Button variant="text">About</Button>
-              <Button variant="contained">Start now!</Button>
+              <Button variant="contained">Create Event!</Button>
             </ButtonsBox>
           </InfoWrapper>
           <Section>
-            <SectionTitle>Active Events</SectionTitle>
+            <SectionTitle>
+              Active Events
+              <Anchor href="/events">
+                Show more
+                <Icon
+                  path={mdiChevronRight}
+                  title="Arrow Right"
+                  size={1}
+                />
+              </Anchor>
+            </SectionTitle>
             <EventsWrapper>
-              <CardEvent/>
-              <CardEvent/>
-              <CardEvent/>
-              <CardEvent/>
-              <CardEvent/>
-
+              <CardEvent />
+              <CardEvent />
+              <CardEvent />
+              <CardEvent />
+              <CardEvent />
             </EventsWrapper>
           </Section>
         </Content>

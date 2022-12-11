@@ -121,10 +121,13 @@ export const Section = styled.div`
 `;
 
 export const SectionTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const EventsWrapper = styled.div`
@@ -137,5 +140,17 @@ export const EventsWrapper = styled.div`
   }
   @media (max-width: 640px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+`;
+
+export const Anchor = styled.a`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 200ms ease-in-out;
+  :hover {
+    color: rgba(255, 255, 255, 0.65);
   }
 `;
