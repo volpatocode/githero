@@ -51,10 +51,12 @@ export function MenuModal({ handleMenu }: navbarType) {
   return (
     <Modal>
       <Stack>
-        <Anchor href={currentUser?.username ? "/account" : "/createaccount"}>
-          {currentUser?.username && <Avatar size={1} />}
-          {currentUser?.username || "Create Account"}
-        </Anchor>
+        {currentUser?.displayName && (
+          <Anchor href="/profile">
+            <Avatar img={currentUser?.photoURL} size={1} />
+            {currentUser?.displayName}
+          </Anchor>
+        )}
         <Anchor onClick={handleMenu} href="/">
           Home
         </Anchor>
