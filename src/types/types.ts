@@ -5,3 +5,8 @@ export type UserFormData = {
   confirmPassword?: string;
   photoURL?: string;
 };
+
+export type buttonType = {
+  variant: "text" | "contained";
+};
+

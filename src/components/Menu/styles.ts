@@ -46,6 +46,10 @@ export const Stack = styled.div`
 
 export const Anchor = styled.a`
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
   color: rgba(255, 255, 255, 0.95) !important;
   text-align: center;
   padding: 0.5rem 0;

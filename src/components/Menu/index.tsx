@@ -1,9 +1,11 @@
-import { ReactNode, useState } from "react";
+import { useContext, useState } from "react";
 import { Menu, Modal, Anchor, Stack } from "./styles";
 
 import Icon from "@mdi/react";
 import { mdiMenu } from "@mdi/js";
 import { mdiClose } from "@mdi/js";
+import Avatar from "../Avatar";
+import { UserContext } from "../../contexts/UserContext";
 
 export type navbarType = {
   handleMenu?: () => void;
@@ -44,9 +46,15 @@ export default function MenuIcon() {
 }
 
 export function MenuModal({ handleMenu }: navbarType) {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <Modal>
       <Stack>
+        <Anchor href={currentUser?.username ? "/account" : "/createaccount"}>
+          {currentUser?.username && <Avatar size={1} />}
+          {currentUser?.username || "Create Account"}
+        </Anchor>
         <Anchor onClick={handleMenu} href="/">
           Home
         </Anchor>
