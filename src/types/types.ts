@@ -1,3 +1,7 @@
-export type buttonType = {
-    variant: "text" | "contained";
-  };
+export type UserFormData = {
+  username?: string;
+  email?: string;
+  password?: string;
+  confirmPassword?: string;
+  photoURL?: string;
+};
