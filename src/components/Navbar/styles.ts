@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { buttonType } from "../../types/types";
+import { anchorType } from "../../types/types";
 
 export const Navbar = styled.div`
   display: flex;
@@ -19,8 +19,9 @@ export const Stack = styled.div`
   align-items: center;
 `;
 
-export const Button = styled.button<buttonType>`
+export const Anchor = styled.a<anchorType>`
   cursor: pointer;
+  font-size: .8rem;
   padding: 8px 12px;
   background: none;
   color: ${(props) =>
