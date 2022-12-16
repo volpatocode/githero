@@ -40,8 +40,7 @@ export default function index({
         padding="md"
         width="100%"
       >
-        <Image src="/google.svg" alt="Google" width={35} height={35} /> Sign in
-        with Google
+        <Image src="/google.svg" alt="Google" width={35} height={35} /> {text}
       </Button>
     );
   }
@@ -57,8 +56,7 @@ export default function index({
         padding="md"
         width="100%"
       >
-        <Image src="/github.svg" alt="GitHub" width={35} height={35} /> Sign in
-        with GitHub
+        <Image src="/github.svg" alt="GitHub" width={35} height={35} /> {text}
       </Button>
     );
   }
