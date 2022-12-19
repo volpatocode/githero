@@ -108,4 +108,9 @@ export const Button = styled.button<buttonType>`
   :hover {
     filter: brightness(90%);
   }
+
+  :disabled {
+    background: #c3c3c3;
+    border: 1px solid transparent;
+  }
 `;

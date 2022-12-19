@@ -1,7 +1,7 @@
 export type UserFormData = {
   displayName?: string;
-  email?: string;
-  password?: string;
+  email: string;
+  password: string;
   confirmPassword?: string;
   photoURL?: string;
 };
@@ -12,7 +12,9 @@ export type anchorType = {
 };
 
 export type buttonType = {
+  type?: string;
   text?: string;
+  onClick?: any;
   variant?: "google" | "github";
   bgColor?: "transparent" | "green" | "blue" | "white" | "black";
   color?: "transparent" | "green" | "blue" | "white" | "black";
@@ -23,6 +25,7 @@ export type buttonType = {
   image?: any;
   width?: string;
   bold?: boolean;
+  isDisabled?: boolean;
 };
 
 export type menuType = {
