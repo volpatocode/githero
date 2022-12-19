@@ -10,12 +10,12 @@ import {
   MainSubtitle,
   InfoWrapper,
   TitleEmphasis,
-  ButtonsBox,
-  Button,
+  AnchorBox,
+  Anchor,
   SectionTitle,
   EventsWrapper,
   Section,
-  Anchor,
+  ShowMore,
 } from "../styles/homestyles";
 import CardEvent from "../components/CardEvent";
 import Icon from "@mdi/react";
@@ -23,7 +23,7 @@ import Icon from "@mdi/react";
 export default function Home() {
   return (
     <PageWrapper>
-      <Navbar />
+      <Navbar anchors={true} />
       <Content>
         <InfoWrapper>
           <MainTitle>
@@ -35,18 +35,18 @@ export default function Home() {
             nostrum harum quo quaerat mollitia. Optio ullam necessitatibus porro
             repellat cumque, dolorem ad sint.
           </MainSubtitle>
-          <ButtonsBox>
-            <Button variant="text">About</Button>
-            <Button variant="contained">Create Event!</Button>
-          </ButtonsBox>
+          <AnchorBox>
+            <Anchor variant="text" href="#about">About</Anchor>
+            <Anchor variant="contained" href="/event/create">Create Event!</Anchor>
+          </AnchorBox>
         </InfoWrapper>
         <Section>
           <SectionTitle>
             Active Events
-            <Anchor href="/events">
+            <ShowMore href="/events">
               Show more
               <Icon path={mdiChevronRight} title="Arrow Right" size={1} />
-            </Anchor>
+            </ShowMore>
           </SectionTitle>
           <EventsWrapper>
             <CardEvent />

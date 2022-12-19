@@ -16,7 +16,7 @@ export default function index() {
       }}
       href="/"
     >
-      <Image width={25} height={30} alt="logo" src="/crown.svg" />
+      <Image width={25} height={30} alt="logo" src="/crownGreen.svg" />
       githero
     </Link>
   );

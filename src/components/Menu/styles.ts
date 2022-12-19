@@ -21,12 +21,13 @@ export const Modal = styled.div`
   width: 150px;
   position: absolute;
   top: 60px;
+  right: 60px;
   z-index: 999;
   transform: translateX(45%);
   transition: all 200ms ease-in-out;
   overflow: hidden;
   background: rgba(13, 17, 23, 1);
-  border: 1px solid #21262d;
+  border: 3px solid #21262d;
   border-radius: 5px;
   padding: 2rem 0;
 

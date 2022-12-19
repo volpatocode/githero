@@ -3,6 +3,7 @@ import {
   ReactNode,
   useState,
   useEffect,
+  SetStateAction,
 } from "react";
 import { useRouter } from "next/router";
 
@@ -19,6 +20,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
 import Avatar from "../components/Avatar";
 import { UserFormData } from "../types/types";
+import { FieldValues, SubmitHandler } from "react-hook-form/dist/types";
 
 type UserContextProps = {
   children: ReactNode;
@@ -31,14 +33,14 @@ type UserContextType = {
   setIsLoading: (newState: boolean) => void;
   isUserLoading: boolean;
   setIsUserLoading: (newState: boolean) => void;
-  createUser: (data: UserFormData) => void;
-  loginUser: (data: UserFormData) => void;
+  signUpUser: (data: UserFormData) => void;
+  signInUser: (data: UserFormData) => void;
   logOut: () => void;
   resetPassword: (data: UserFormData) => void;
   errorFirebase: string;
   handlePhoto: (e: any) => void;
   handlePhotoUpload: () => void;
-  photo: boolean;
+  photo: any;
   photoURL: any;
   currentUser: any;
 };
@@ -74,7 +76,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   }, []);
 
   // User Login/register functions
-  async function createUser(data: UserFormData) {
+  async function signUpUser(data: UserFormData) {
     setIsLoading(true);
     const res = await createUserWithEmailAndPassword(
       auth,
@@ -85,19 +87,17 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
       email: data?.email,
       uid: res?.user?.uid,
     })
-      .then(() => {
-      })
+      .then(() => {})
       .catch((error) => setErrorFirebase(error.message))
       .finally(() => {
         setIsLoading(false);
       });
   }
 
-  async function loginUser(data: UserFormData) {
+  async function signInUser(data: UserFormData) {
     setIsLoading(true);
     await signInWithEmailAndPassword(auth, data.email, data.password)
-      .then(() => {
-      })
+      .then(() => {})
       .catch((error) => setErrorFirebase(error.message))
       .finally(() => {
         setIsLoading(false);
@@ -107,8 +107,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   async function logOut() {
     setIsLoading(true);
     await signOut(auth)
-      .then(() => {
-      })
+      .then(() => {})
       .finally(() => {
         setIsLoading(false);
       });
@@ -135,7 +134,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     }
   }, [currentUser?.photoURL]);
 
-  async function upload(file, currentUser, loading) {
+  async function upload(file: any, currentUser: any, loading: any) {
     setIsLoading(true);
     const randomstring = new Date().getTime();
     const fileRef = ref(
@@ -160,7 +159,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     setIsLoading(false);
   }
 
-  function handlePhoto(e) {
+  function handlePhoto(e: { target: { files: SetStateAction<null>[] } }) {
     if (e.target.files[0]) {
       setIsLoading(true);
       setPhoto(e.target.files[0]);
@@ -177,8 +176,8 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
         setIsLoading,
         isUserLoading,
         setIsUserLoading,
-        createUser,
-        loginUser,
+        signUpUser,
+        signInUser,
         logOut,
         resetPassword,
         errorFirebase,

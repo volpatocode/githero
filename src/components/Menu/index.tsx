@@ -6,11 +6,7 @@ import { mdiMenu } from "@mdi/js";
 import { mdiClose } from "@mdi/js";
 import Avatar from "../Avatar";
 import { UserContext } from "../../contexts/UserContext";
-
-export type navbarType = {
-  handleMenu?: () => void;
-  setIsMenuOpen?: (oldState: boolean) => void;
-};
+import { menuType } from "../../types/types";
 
 export default function MenuIcon() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,7 +41,7 @@ export default function MenuIcon() {
   );
 }
 
-export function MenuModal({ handleMenu }: navbarType) {
+export function MenuModal({ handleMenu }: menuType) {
   const { currentUser } = useContext(UserContext);
 
   return (

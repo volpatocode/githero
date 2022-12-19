@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>GitHero</title>
-        <link rel="icon" type="image/x-icon" href="/crown.svg" />
+        <link rel="icon" type="image/x-icon" href="/crownGreen.svg" />
       </Head>
       <GlobalStyle />
       <UtilsContextProvider>

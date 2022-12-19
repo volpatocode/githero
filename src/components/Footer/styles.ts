@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  background-color: #0d0d0d;
-  width: 100%;
-`;
-
 export const Footer = styled.div`
   display: flex;
   flex-direction: row;

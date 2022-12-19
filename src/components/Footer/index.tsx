@@ -9,7 +9,7 @@ export default function index() {
   return (
     <Footer>
       <Logo />
-      <Copyright>Copyright &copy; githero{year}. All Right Reserves</Copyright>
+      <Copyright>Copyright &copy; githero{year}.</Copyright>
     </Footer>
   );
 }

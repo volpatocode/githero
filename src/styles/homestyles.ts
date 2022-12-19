@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { buttonType } from "../types/types";
+import { anchorType } from "../types/types";
 
 export const PageWrapper = styled.div`
   width: 100vw;
@@ -23,7 +23,7 @@ export const PageWrapper = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
 `;
 
 export const InfoWrapper = styled.div`
@@ -81,7 +81,7 @@ export const MainSubtitle = styled.p`
   }
 `;
 
-export const ButtonsBox = styled.div`
+export const AnchorBox = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -89,10 +89,10 @@ export const ButtonsBox = styled.div`
   justify-content: center;
 `;
 
-export const Button = styled.button<buttonType>`
+export const Anchor = styled.a<anchorType>`
   white-space: nowrap;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 12px 24px;
   background: none;
   color: ${(props) =>
@@ -143,7 +143,7 @@ export const EventsWrapper = styled.div`
   }
 `;
 
-export const Anchor = styled.a`
+export const ShowMore = styled.a`
   cursor: pointer;
   display: flex;
   align-items: center;
