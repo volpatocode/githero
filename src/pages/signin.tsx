@@ -1,7 +1,4 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import {
-  Content,
   PageWrapper,
   Header,
   Title,
@@ -12,36 +9,71 @@ import {
   ButtonsBox,
   Anchor,
   Divider,
+  Form,
 } from "../styles/signinstyles";
 import Button from "../components/Button";
 import Image from "next/image";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { signInValidationSchema } from "../utils/validations";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { UserContext } from "../contexts/UserContext";
+import { useContext } from "react";
+import InputError from "../components/InputError";
 
-export default function createaccount() {
+export default function SignIn() {
+  const { signInUser, errorFirebase } = useContext(UserContext);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors: formErrors },
+  } = useForm({
+    resolver: yupResolver(signInValidationSchema),
+  });
+
   return (
     <PageWrapper>
-      <Navbar />
-      <Content>
-        <Header>
-          <Title>Sign in to your account</Title>
-          <Subtitle>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit, alias.{" "}
-          </Subtitle>
-        </Header>
-
+      <Header>
+        <Link href="/">
+          <Image width={35} height={40} alt="logo" src="/crownGreen.svg" />
+        </Link>
+        <Title>Sign in to your account</Title>
+        <Subtitle>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit, alias.
+        </Subtitle>
+      </Header>
+      <Form onSubmit={handleSubmit(signInUser)}>
         <InputsBox>
           <InputWrapper>
-            <Input placeholder="Email" />
+            <Input
+              {...register("email")}
+              id="signIn-email"
+              type="email"
+              placeholder="Email"
+              formNoValidate={true}
+            />
+            {formErrors?.email && (
+              <InputError error={formErrors?.email?.message} />
+            )}
           </InputWrapper>
           <InputWrapper>
-            <Input placeholder="Password" />
-          </InputWrapper>
-          <InputWrapper>
-            <Input placeholder="Confirm Password" />
+            <Input
+              {...register("password")}
+              id="signIn-password"
+              type="password"
+              placeholder="Password"
+            />
+            {formErrors?.password && (
+              <InputError error={formErrors?.password?.message} />
+            )}
           </InputWrapper>
         </InputsBox>
-
         <ButtonsBox>
+          {errorFirebase && <InputError error={errorFirebase} />}
           <Button
+            type="submit"
+            onClick={handleSubmit(signInUser)}
             text="Sign in"
             color="black"
             bgColor="green"
@@ -56,14 +88,13 @@ export default function createaccount() {
             }
           />
           <Divider />
-          <Button variant="google" />
-          <Button variant="github" />
+          <Button variant="google" text="Sign in with Google" />
+          <Button variant="github" text="Sign in with GitHub" />
           <Subtitle>
             Don&apos;t have an account? <Anchor href="/signup">Sign up</Anchor>
           </Subtitle>
         </ButtonsBox>
-      </Content>
-      <Footer />
+      </Form>
     </PageWrapper>
   );
 }
