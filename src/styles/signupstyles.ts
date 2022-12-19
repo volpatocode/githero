@@ -9,6 +9,16 @@ export const PageWrapper = styled.div`
   padding: 0 5%;
 `;
 
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+`;
+
 export const ContentWrapper = styled.div`
   width: 60%;
   display: flex;
