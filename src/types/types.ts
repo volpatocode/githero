@@ -32,7 +32,3 @@ export type menuType = {
   handleMenu?: () => void;
   setIsMenuOpen?: (oldState: boolean) => void;
 };
-
-export type navbarType = {
-  anchors?: boolean | true;
-};

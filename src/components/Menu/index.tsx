@@ -1,11 +1,9 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Menu, Modal, Anchor, Stack } from "./styles";
 
 import Icon from "@mdi/react";
 import { mdiMenu } from "@mdi/js";
 import { mdiClose } from "@mdi/js";
-import Avatar from "../Avatar";
-import { UserContext } from "../../contexts/UserContext";
 import { menuType } from "../../types/types";
 
 export default function MenuIcon() {
@@ -42,22 +40,11 @@ export default function MenuIcon() {
 }
 
 export function MenuModal({ handleMenu }: menuType) {
-  const { currentUser } = useContext(UserContext);
-
   return (
     <Modal>
       <Stack>
-        {currentUser?.displayName && (
-          <Anchor href="/profile">
-            <Avatar img={currentUser?.photoURL} size={1} />
-            {currentUser?.displayName}
-          </Anchor>
-        )}
         <Anchor onClick={handleMenu} href="/">
           Home
-        </Anchor>
-        <Anchor onClick={handleMenu} href="/">
-          Profile
         </Anchor>
         <Anchor onClick={handleMenu} href="/">
           Create Event

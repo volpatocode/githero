@@ -4,14 +4,21 @@ import { mdiAccountCircle } from "@mdi/js";
 import { Avatar } from "./styles";
 
 type avatarType = {
-  img?: string;
-  href?: string;
-  size?: number
+  img: string;
+  href: string;
+  size?: number;
 };
 
 export default function index({ img, href, size }: avatarType) {
   return (
-    <Link href={"/" || href}>
+    <Link
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      href={"/" || href}
+    >
       {img ? (
         <Avatar src={img} />
       ) : (

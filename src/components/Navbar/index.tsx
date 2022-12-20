@@ -2,14 +2,20 @@ import { Navbar, Stack, Anchor } from "./styles";
 
 import Logo from "../Logo";
 import Menu from "../Menu";
-import { navbarType } from "../../types/types";
+import Avatar from "../Avatar";
+import { UserContext } from "../../contexts/UserContext";
+import { useContext } from "react";
 
-export default function index({ anchors }: navbarType) {
+export default function NavbarComponent() {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <Navbar>
       <Logo />
       <Stack>
-        {anchors  && (
+        {currentUser ? (
+          <Avatar img={currentUser?.photoURL} href="/profile" />
+        ) : (
           <>
             <Anchor variant="text" href="/signin">
               Sign in
@@ -19,6 +25,7 @@ export default function index({ anchors }: navbarType) {
             </Anchor>
           </>
         )}
+
         <Menu />
       </Stack>
     </Navbar>
